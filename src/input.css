@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+@font-face {
+  font-family: 'Helvetica-Neue';
+  src: url('../fonts/helveticaneue/helveticaneue-medium.woff2') format('woff2'),
+      url('../fonts/helveticaneue/helveticaneue-medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: 'Helvetica-Neue';
+  src: url('../fonts/helveticaneue/helveticaneue-bold.woff2') format('woff2'),
+      url('../fonts/helveticaneue/helveticaneue-bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+ 
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+[x-cloak] {
+  @apply !hidden;
+}
+
+@layer base {
+  h1 {
+    @apply text-[48px] leading-[56px] lg:text-[72px] lg:leading-none font-medium font-helvetica tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-brand to-brand/70
+  }
+  h2 {
+    @apply text-[36px] lg:text-[56px] leading-none font-medium font-helvetica tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-brand to-brand/70
+  }
+ 
+  h3 {
+    @apply text-[32px] lg:text-[40px] leading-none font-medium font-helvetica tracking-tight text-brand
+  }
+  h4 {
+    @apply text-2xl lg:text-[32px] leading-none font-medium font-helvetica text-brand
+  }
+  p {
+    @apply text-sm leading-6
+  }
+  .body-lg {
+    @apply text-lg leading-6
+  }
+}
+
+@layer components { 
+  .caption {
+    @apply uppercase text-sm leading-6 font-bold tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-secondary-600/70
+  }
+  .btn-primary {
+    @apply flex items-center justify-center text-center gap-1.5 py-3 duration-200 px-6 bg-primary-600 text-lg leading-6 font-bold text-white rounded-md hover:bg-primary-700 active:bg-primary-500
+  }
+  .btn-secondary {
+    @apply flex items-center justify-center text-center gap-1.5 py-2.5 duration-200 px-6 bg-white text-lg leading-6 font-bold text-brand rounded after:bg-gradient-to-r relative after:absolute after:inset-[-2px] after:rounded-md after:-z-10 after:from-primary-600 after:to-secondary-600/70 hover:bg-primary-700 hover:text-white active:bg-primary-500 active:text-white hover:after:from-primary-700 hover:after:to-primary-700 active:after:bg-primary-500 active:after:from-primary-500 active:after:to-primary-500
+  }
+  .hyperlink {
+    @apply flex items-center justify-center text-center gap-1.5 py-3 duration-200 px-6 bg-transparent text-lg leading-6 font-bold text-main-600 rounded-md hover:text-main-700 hover:underline active:text-main-500 active:underline
+  }
+}

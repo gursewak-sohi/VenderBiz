@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VenderBiz</title>
+    <link rel="shortcut icon" href="./favicon.svg" />
+    <!-- Alipine JS -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+     <!-- AOS CSS -->
+     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- Main CSS -->
+    <link href="./assets/css/style.css" rel="stylesheet" />
+     <!-- Google tag (gtag.js) -->
+     <script async src="https://www.googletagmanager.com/gtag/js?id=G-EXSLFKX78X"></script>
+     <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-EXSLFKX78X');
+   </script>
+</head>
+
+<body  x-data="{'openLanguage': false, language : 'English'}" class="text-main-600 font-sans antialiased">
+    <!-- Header -->
+    <header class="sticky top-0 z-20 py-6 w-full bg-white bg-opacity-95 backdrop-filter lg:bg-opacity-80 lg:backdrop-blur-lg">
+        <div class="max-w-7xl mx-auto px-4 md:px-20">
+            <div class="flex items-center justify-between">
+                <a href="index.html">
+                    <img src="assets/images/svg/logo.svg" alt="logo" />
+                </a>
+                <!-- Custom Select -->
+                <div class="relative flex items-center gap-1" @click.outside="openLanguage = false">
+                    <!-- trigger button -->
+                    <label class="hidden md:inline-block text-lg">Language:</label>
+                    <button type="button" @click="openLanguage = !openLanguage;" class="text-lg font-bold flex items-center gap-1">
+                            <span x-text="(language == '') ? 'Select Language' : language"></span>
+                            <img
+                            :class="{ '-rotate-180': openLanguage }"
+                            class="ml-auto duration-200"
+                            src="assets/images/svg/arrow.svg"
+                            alt="arrow"/>
+                    </button>
+                    <!-- Options -->
+                    <ul x-cloak class="absolute top-full mt-2 w-60 rounded-md py-1.5 bg-white right-0 shadow-[0px_4px_20px_0_#0000001F]" x-show="openLanguage" x-transition:enter="transform transition ease-in-out duration-300" x-transition:enter-start="opacity-0 -translate-y-6" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transform transition ease-in-out duration-200"
+                        x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
+                        <li class="text-lg flex items-center gap-2 py-1 px-3 duration-150 hover:bg-light cursor-pointer" @click="language = 'English'; openLanguage = false">
+                           <img :class="{ 'opacity-100': language == 'English', 'opacity-0': language != 'English' }" src="assets/images/svg/check.svg" alt="English"> English
+                        </li>
+                        <li class="text-lg flex items-center gap-2 py-1 px-3 duration-150 hover:bg-light cursor-pointer" @click="language = 'Portugese'; openLanguage = false">
+                            <img :class="{ 'opacity-100': language == 'Portugese', 'opacity-0': language != 'Portugese' }" src="assets/images/svg/check.svg" alt="Portugese"> Portugese
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header> 
+
+    <!-- Main Content -->
+    <main class="overflow-hidden">
+        <!-- Hero Section -->
+        <section class="relative pt-10 pb-12 md:pb-20">   
+            <div class="max-w-7xl mx-auto px-4 md:px-20">
+                <div class="flex flex-col items-center gap-10">
+                    <div class="flex flex-col items-center text-center max-w-[688px] mx-auto w-full">
+                        <div data-aos="fade-up"  class="bg-gradient-to-r from-primary-600 to-secondary-600 p-[0.5px] rounded-full mb-3">
+                            <div class="bg-white flex items-center gap-1 pl-2 pr-3 py-1 text-[13px] leading-4 font-semibold shadow-[0px_1px_4px_0px_#0000001F] rounded-full">
+                                <img src="assets/images/svg/twinkles.svg" alt="twinkles">
+                                Sign up today for free access
+                            </div>
+                        </div>
+                        <h1 data-aos="fade-up" data-aos-delay="100"  class="lg:min-h-[152px]" x-text="language === 'English' ? 'Sell your business in days' : 'Venda o Seu Negócio em Dias'">Sell your business in days</h1>
+                        <p data-aos="fade-up" data-aos-delay="200"  class="body-lg mt-5 md:mt-7 lg:mt-6" x-text="language === 'English' ? 'Quick Transactions, Maximum Value - VenderBiz is the best platform to sell your businesses in Portugal' : 'Transações Rápidas com Máximo Valor VenderBiz é amelhor plataforma para venderes negócios em Portugal'">Quick Transactions, Maximum Value - VenderBiz is the best platform to sell your businesses in Portugal</p>
+                        <div data-aos="fade-up" data-aos-delay="300"  class="flex flex-col md:flex-row md:items-center gap-4 mt-8 w-full md:w-auto">
+                            <a class="btn-primary" href="javascript:;">
+                                Join the waitlist <img src="assets/images/svg/next.svg" alt="arrow"/>
+                            </a>
+                            <a class="hyperlink" href="javascript:;">
+                                Calculate business valuation
+                            </a>
+                        </div>
+                    </div>
+
+                    <div data-aos="zoom-in" data-aos-delay="400"  class="max-w-[928px] w-full mx-auto shadow-[0px_4px_20px_0_#0000001F] rounded-[10px]">
+                        <img  width="928" height="626" src="assets/images/home/dashboard@2x.webp" alt="dashboard" />
+                    </div>
+                    <img width="1440" class="absolute left-1/2 -translate-x-1/2  bottom-20 md:-bottom-20 lg:-bottom-56 -z-10" src="assets/images/home/hero-bg.webp" alt="bg"/>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="relative py-6 md:py-10">   
+            <div class="max-w-7xl mx-auto px-4 md:px-20">
+                <div class="flex flex-col gap-10">
+                    <h3 data-aos="fade-up" data-aos-delay="0"  class="text-center" x-text="language === 'English' ? 'Our commitment to serve you well' : 'Comprometemo-nos com o melhor serviço'">Our commitment to serve you well</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+                        <div data-aos="fade-up" data-aos-delay="100"  class="flex flex-col gap-2">
+                            <h4>2400+</h4>
+                            <p class="text-sm leading-6 md:body-lg text-main-400" x-text="language === 'English' ? 'Potential sellers' : 'Vendedores'">Potential sellers</p>
+                        </div>
+                        <div data-aos="fade-up" data-aos-delay="200"  class="flex flex-col gap-2">
+                            <h4>4800+</h4>
+                            <p class="text-sm leading-6 md:body-lg text-main-400" x-text="language === 'English' ? 'Potential buyers' : 'Compradores'">Potential buyers</p>
+                        </div>
+                        <div data-aos="fade-up" data-aos-delay="300"  class="flex flex-col gap-2">
+                            <h4>6 <span x-text="language === 'English' ? 'Months' : 'Meses'">Months</span></h4>
+                            <p class="text-sm leading-6 md:body-lg text-main-400" x-text="language === 'English' ? 'Average time to sell' : 'Tempo Média até Venda'">Average time to sell</p>
+                        </div>
+                        <div data-aos="fade-up" data-aos-delay="400"  class="flex flex-col gap-2">
+                            <h4>+70</h4>
+                            <p class="text-sm leading-6 md:body-lg text-main-400" x-text="language === 'English' ? 'Net Promoter Score' : 'Net Promoter Score'">Net Promoter Score</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+         <!-- Grid Section -->
+         <section class="relative py-12 md:py-20">   
+            <div class="max-w-7xl mx-auto px-4 md:px-20">
+                <div class="flex flex-col gap-10">
+                     <div  class="flex flex-col gap-4 md:gap-6 items-center text-center w-full max-w-[688px] mx-auto">
+                        <h2 data-aos="fade-up" data-aos-delay="100"  x-text='language === "English" ? "From Listing to Closing, We&apos;ve Got You Covered" : "Da Promoção à Venda, nós ajudamos em tudo"''>From Listing to Closing, We&apos;ve Got You Covered</h2>
+                        <p data-aos="fade-up" data-aos-delay="200"  class="body-lg"  x-text="language === 'English' ? 'VenderBiz optimizes every step in your sales journey for the best results - less stress and more success' : 'A VenderBiz otimiza cada passo do processo de venda para obter os melhores resultados - menos stress, mais sucesso.'">VenderBiz optimizes every step in your sales journey for the best results - less stress and more success</p>
+                     </div>
+                     <div class="flex flex-col gap-20 md:gap-[160px]">
+                        <div class="md:grid flex flex-col-reverse md:grid-cols-2 gap-6 md:gap-8 items-center">
+                            <div data-aos="fade-up" data-aos-delay="300"  class="flex flex-col items-start">
+                                <div class="caption" x-text="language === 'English' ? 'ESTIMATE MARKET VALUE' : 'Estimar Valor de Mercado'">ESTIMATE MARKET VALUE</div>
+                                <h3 class="mt-1" x-text="language === 'English' ? 'Stop guessing fair market valuation' : 'Pare de adivinhar o valor justo de mercado'">Stop guessing fair market valuation</h3>
+                                <p class="mt-4 text-main-400" x-text='language === "English" ? "Leverage our intuitive calculator to determine your business&apos;s worth with precision. By answering targeted questions regarding your finances and operations, you&apos;ll receive a personalized market value estimate that aligns with industry standards." : "Utilize a nossa calculadora para estimar o valor do seu negócio com precisão. Ao responder a perguntas específicas sobre o seu negócio, finanças e operações, receberá uma estimativa personalizada do valor de mercado que se alinha com os padrões da indústria."'>Leverage our intuitive calculator to determine your business's worth with precision. By answering targeted questions regarding your finances and operations, you'll receive a personalized market value estimate that aligns with industry standards.</p>
+                                <a class="btn-secondary mt-8 w-full md:w-auto" href="javascript:;">
+                                    <span x-text="language === 'English' ? 'Calculate Value Now' : 'Calcular Valor Agora'">Calculate Value Now</span>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17.92 11.62C17.8724 11.4973 17.801 11.3851 17.71 11.29L12.71 6.29C12.6168 6.19676 12.5061 6.1228 12.3842 6.07234C12.2624 6.02188 12.1319 5.99591 12 5.99591C11.7337 5.99591 11.4783 6.1017 11.29 6.29C11.1968 6.38324 11.1228 6.49393 11.0723 6.61575C11.0219 6.73758 10.9959 6.86814 10.9959 7C10.9959 7.2663 11.1017 7.5217 11.29 7.71L14.59 11H7C6.73478 11 6.48043 11.1054 6.29289 11.2929C6.10536 11.4804 6 11.7348 6 12C6 12.2652 6.10536 12.5196 6.29289 12.7071C6.48043 12.8946 6.73478 13 7 13H14.59L11.29 16.29C11.1963 16.383 11.1219 16.4936 11.0711 16.6154C11.0203 16.7373 10.9942 16.868 10.9942 17C10.9942 17.132 11.0203 17.2627 11.0711 17.3846C11.1219 17.5064 11.1963 17.617 11.29 17.71C11.383 17.8037 11.4936 17.8781 11.6154 17.9289C11.7373 17.9797 11.868 18.0058 12 18.0058C12.132 18.0058 12.2627 17.9797 12.3846 17.9289C12.5064 17.8781 12.617 17.8037 12.71 17.71L17.71 12.71C17.801 12.6149 17.8724 12.5028 17.92 12.38C18.02 12.1365 18.02 11.8635 17.92 11.62Z" fill="currentColor"/>
+                                    </svg>
+                                </a>    
+                            </div>
+                            <div data-aos="fade-up" data-aos-delay="400"  class="w-full h-[348px] bg-light rounded-2xl overflow-hidden">
+                                <img class="w-full h-full object-cover object-left" src="assets/images/home/market-valuation.svg" alt="market-valuation">
+                            </div>
+                        </div>
+                        <div class="md:grid flex flex-col md:grid-cols-2 gap-6 md:gap-8 items-center">
+                            <div data-aos="fade-up" data-aos-delay="200"  class="w-full h-[348px] bg-light rounded-2xl overflow-hidden">
+                                <img class="w-full h-full object-cover object-center relative left-4 lg:left-0" src="assets/images/home/buyers.svg" alt="buyers">
+                            </div>
+                            <div data-aos="fade-up" data-aos-delay="300"  class="flex flex-col items-start">
+                                <div class="caption" x-text="language === 'English' ? 'CONNECT WITH BUYERS' : 'Conectar com Compradores'">CONNECT WITH BUYERS</div>
+                                <h3 class="mt-1" x-text="language === 'English' ? 'Connect and pitch directly to the right buyers' : 'Conecte-se e apresente-se diretamente aos compradores certos'">Connect and pitch directly to the right buyers</h3>
+                                <p class="mt-4 text-main-400" x-text='language === "English" ? "List your business on our platform to access an extensive network of pre-vetted buyers. We prioritize your confidentiality while maximizing exposure, ensuring your business reaches interested parties efficiently." : "Liste o seu negócio na nossa plataforma para aceder a uma extensa rede de compradores pré-selecionados. Prioritizamos a sua confidencialidade enquanto maximizamos a exposição, garantindo que o seu negócio alcança o máximo de compradores de forma eficiente."''>List your business on our platform to access an extensive network of pre-vetted buyers. We prioritize your confidentiality while maximizing exposure, ensuring your business reaches interested parties efficiently.</p>
+                                <a class="btn-secondary mt-8 w-full md:w-auto" href="javascript:;">
+                                    <span x-text="language === 'English' ? 'List Business Now' : 'Listar Negócio Agora'">List Business Now</span>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17.92 11.62C17.8724 11.4973 17.801 11.3851 17.71 11.29L12.71 6.29C12.6168 6.19676 12.5061 6.1228 12.3842 6.07234C12.2624 6.02188 12.1319 5.99591 12 5.99591C11.7337 5.99591 11.4783 6.1017 11.29 6.29C11.1968 6.38324 11.1228 6.49393 11.0723 6.61575C11.0219 6.73758 10.9959 6.86814 10.9959 7C10.9959 7.2663 11.1017 7.5217 11.29 7.71L14.59 11H7C6.73478 11 6.48043 11.1054 6.29289 11.2929C6.10536 11.4804 6 11.7348 6 12C6 12.2652 6.10536 12.5196 6.29289 12.7071C6.48043 12.8946 6.73478 13 7 13H14.59L11.29 16.29C11.1963 16.383 11.1219 16.4936 11.0711 16.6154C11.0203 16.7373 10.9942 16.868 10.9942 17C10.9942 17.132 11.0203 17.2627 11.0711 17.3846C11.1219 17.5064 11.1963 17.617 11.29 17.71C11.383 17.8037 11.4936 17.8781 11.6154 17.9289C11.7373 17.9797 11.868 18.0058 12 18.0058C12.132 18.0058 12.2627 17.9797 12.3846 17.9289C12.5064 17.8781 12.617 17.8037 12.71 17.71L17.71 12.71C17.801 12.6149 17.8724 12.5028 17.92 12.38C18.02 12.1365 18.02 11.8635 17.92 11.62Z" fill="currentColor"/>
+                                    </svg>
+                                </a>    
+                            </div>
+                        </div>
+                        <div class="md:grid flex flex-col-reverse md:grid-cols-2 gap-6 md:gap-8 items-center">
+                            <div data-aos="fade-up" data-aos-delay="100"  class="flex flex-col items-start">
+                                <div class="caption" x-text="language === 'English' ? 'NAVIGATE COMPLEX SALES PROCESS' : 'Navegar o Processo de Venda'">NAVIGATE COMPLEX SALES PROCESS</div>
+                                <h3 class="mt-1" x-text="language === 'English' ? 'We help navigate the tricky sales process' : 'Ajudamo-o a navegar o complicado processo de venda'">We help navigate the tricky sales process</h3>
+                                <p class="mt-4 text-main-400" x-text='language === "English" ? "Our comprehensive suite of guides, templates, and checklists provides you with all the necessary documentation to streamline the selling process. From initial listing to closing, we ensure every step is covered with clarity." : "A nossa documentação com guias, modelos e checklists simplificao seu processo de venda. Desde a listagem inicial até à oficialização da venda, garantimos que cada passo é completo com clareza e transparência."'>Our comprehensive suite of guides, templates, and checklists provides you with all the necessary documentation to streamline the selling process. From initial listing to closing, we ensure every step is covered with clarity.</p>
+                                <a class="btn-secondary mt-8 w-full md:w-auto" href="javascript:;">
+                                    <span x-text="language === 'English' ? 'Get Selling Guide' : 'Obter Guia de Vendas'">Get Selling Guide</span>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17.92 11.62C17.8724 11.4973 17.801 11.3851 17.71 11.29L12.71 6.29C12.6168 6.19676 12.5061 6.1228 12.3842 6.07234C12.2624 6.02188 12.1319 5.99591 12 5.99591C11.7337 5.99591 11.4783 6.1017 11.29 6.29C11.1968 6.38324 11.1228 6.49393 11.0723 6.61575C11.0219 6.73758 10.9959 6.86814 10.9959 7C10.9959 7.2663 11.1017 7.5217 11.29 7.71L14.59 11H7C6.73478 11 6.48043 11.1054 6.29289 11.2929C6.10536 11.4804 6 11.7348 6 12C6 12.2652 6.10536 12.5196 6.29289 12.7071C6.48043 12.8946 6.73478 13 7 13H14.59L11.29 16.29C11.1963 16.383 11.1219 16.4936 11.0711 16.6154C11.0203 16.7373 10.9942 16.868 10.9942 17C10.9942 17.132 11.0203 17.2627 11.0711 17.3846C11.1219 17.5064 11.1963 17.617 11.29 17.71C11.383 17.8037 11.4936 17.8781 11.6154 17.9289C11.7373 17.9797 11.868 18.0058 12 18.0058C12.132 18.0058 12.2627 17.9797 12.3846 17.9289C12.5064 17.8781 12.617 17.8037 12.71 17.71L17.71 12.71C17.801 12.6149 17.8724 12.5028 17.92 12.38C18.02 12.1365 18.02 11.8635 17.92 11.62Z" fill="currentColor"/>
+                                    </svg>
+                                </a>    
+                            </div>
+                            <div data-aos="fade-up" data-aos-delay="200"  class="w-full h-[348px] bg-light rounded-2xl overflow-hidden">
+                                <img class="w-full h-full object-cover object-left" src="assets/images/home/sales-process.svg" alt="sales-process">
+                            </div>
+                        </div>
+                     </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative overflow-hidden py-12 md:py-20 bg-cover" style="background-image: url(assets/images/home/footer.png);">
+        <div class="max-w-7xl mx-auto px-4 md:px-20">
+            <div data-aos="fade-up" data-aos-delay="0" class="bg-brand rounded-2xl flex justify-center px-5 sm:px-10 py-16 md:p-16 relative">
+                <div class="w-full max-w-[688px] mx-auto flex flex-col items-center text-center">
+                    <img class="absolute left-1/2 -translate-x-1/2 -top-12" src="assets/images/svg/logomark.svg" alt="logomark"/>
+                    <div class="caption mb-1">THIS IS NOT THE END</div>
+                    <h2 class="from-white to-white/70 h-[40px] lg:h-[62px] mb-3.5" x-text="language === 'English' ? 'Sell your Business Today' : 'Venda o Seu Negócio Hoje'">Sell your Business Today</h2>
+                    <p class="body-lg text-light mb-8" x-text="language === 'English' ? 'Join a community of successful sellers - sign up now andget exclusive early access to VenderBiz' : 'Junte-se a uma comunidade de vendedores desucesso - inscreva-se agora e obtenha acesso exclusivo antecipado ao VenderBiz.'">Join a community of successful sellers - sign up now andget exclusive early access to VenderBiz</p>
+                    <a class="btn-primary" href="javascript:;">
+                        <span x-text="language === 'English' ? 'Secure Exclusive Access' : 'Obter Guia de Vendas'">Garantir Acesso Exclusivo</span>
+                        <img src="assets/images/svg/next.svg" alt="arrow"/>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+ 
+  
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <!-- Main JS -->
+  <script type="text/javascript" src="assets/js/main.js"></script>
+  
+</html>
