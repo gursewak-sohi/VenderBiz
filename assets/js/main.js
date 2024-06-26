@@ -6,7 +6,7 @@
     // AOS Init
     AOS.init({
         duration: 800,
-        once: true,
+        once: true, 
         easing: 'ease',
         disable: 'phone',
     });
@@ -130,13 +130,28 @@
                 delete this.errors.excessCompensation;
               }
               break;  
+            // case 'yearsEarningsContinue':
+            //   if (!this.excessCompensation === null || this.excessCompensation === '' || isNaN(this.yearsEarningsContinue) || this.yearsEarningsContinue < 0 || this.yearsEarningsContinue > 10) {
+            //     this.errors.yearsEarningsContinue = 'Please enter a valid number of years between 0 and 10';
+            //   } else {
+            //     delete this.errors.yearsEarningsContinue;
+            //   }
+            //   break;
+
             case 'yearsEarningsContinue':
-              if (!this.excessCompensation === null || this.excessCompensation === '' || isNaN(this.yearsEarningsContinue) || this.yearsEarningsContinue < 0 || this.yearsEarningsContinue > 10) {
-                this.errors.yearsEarningsContinue = 'Please enter a valid number of years between 0 and 10';
-              } else {
-                delete this.errors.yearsEarningsContinue;
-              }
-              break;
+                if (!this.yearsEarningsContinue === null || this.yearsEarningsContinue === '') {
+                  this.errors.yearsEarningsContinue = 'Earning years can not be empty';
+                } else if (isNaN(this.yearsEarningsContinue)) {
+                  this.errors.yearsEarningsContinue = 'Earning years must be a number';
+                } 
+                else if (this.yearsEarningsContinue < 0 || this.yearsEarningsContinue > 10) {
+                  this.errors.yearsEarningsContinue = 'Please enter a valid number of years between 0 and 10';
+                }
+                else {
+                  delete this.errors.yearsEarningsContinue;
+                }
+                break; 
+
             case 'marketabilityDiscount':
                 if (!this.marketabilityDiscount || !/^(-?\d+(\.\d+)?|\.\d+)%?$/.test(this.marketabilityDiscount)) {
                   this.errors.marketabilityDiscount = 'Please enter a valid discount percentage';
