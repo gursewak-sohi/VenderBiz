@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup | VenderBiz</title>
+    <link rel="shortcut icon" href="./favicon.svg" />
+    <!-- Alipine JS -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+     <!-- AOS CSS -->
+     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- Main CSS -->
+    <link href="./assets/css/style.css" rel="stylesheet" />
+     <!-- Google tag (gtag.js) -->
+     <script async src="https://www.googletagmanager.com/gtag/js?id=G-EXSLFKX78X"></script>
+     <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-EXSLFKX78X');
+   </script>
+</head>
+
+<body x-data="aplineData"  class="text-main-600 font-sans antialiased">
+    <!-- Header -->
+    <header class="sticky top-0 z-20 py-6 w-full bg-white bg-opacity-95 backdrop-filter lg:bg-opacity-80 lg:backdrop-blur-lg">
+        <div class="max-w-7xl mx-auto px-4 md:px-20">
+            <div class="flex items-center justify-between">
+                <a href="index.html">
+                    <img src="assets/images/svg/logo.svg" alt="logo" />
+                </a>
+                <!-- Custom Select -->
+                <div x-data="{'open': false }" class="relative flex items-center gap-1" @click.outside="open = false">
+                    <!-- trigger button -->
+                    <label class="hidden md:inline-block text-lg">Language:</label>
+                    <button type="button" @click="open = !open;" class="text-lg font-bold flex items-center gap-1">
+                            <span x-text="(language == '') ? 'Select Language' : language"></span>
+                            <img
+                            :class="{ '-rotate-180': open }"
+                            class="ml-auto duration-200"
+                            src="assets/images/svg/arrow.svg"
+                            alt="arrow"/>
+                    </button>
+                    <!-- Options -->
+                    <ul x-cloak class="absolute top-full mt-2 w-60 rounded-md py-1.5 bg-white right-0 shadow-[0px_4px_20px_0_#0000001F]" x-show="open" x-transition:enter="transform transition ease-in-out duration-300" x-transition:enter-start="opacity-0 -translate-y-6" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transform transition ease-in-out duration-200"
+                        x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
+                        <li class="text-lg flex items-center gap-2 py-1 px-3 duration-150 hover:bg-light cursor-pointer" @click="setLanguage('English'); open = false">
+                           <img :class="{ 'opacity-100': language == 'English', 'opacity-0': language != 'English' }" src="assets/images/svg/check.svg" alt="English"> English
+                        </li>
+                        <li class="text-lg flex items-center gap-2 py-1 px-3 duration-150 hover:bg-light cursor-pointer" @click="setLanguage('Portugese'); open = false">
+                            <img :class="{ 'opacity-100': language == 'Portugese', 'opacity-0': language != 'Portugese' }" src="assets/images/svg/check.svg" alt="Portugese"> Portugese
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header> 
+
+    <!-- Main Content -->
+    <main class="overflow-hidden">
+        <!-- Calc Section -->
+        <section class="relative pt-10 pb-20">   
+            <div class="max-w-7xl mx-auto px-4 md:px-20">
+                <div class="flex flex-col items-center gap-10">
+                     <div class="flex flex-col items-center justify-center max-w-3xl xl:px-3 gap-6 lg:gap-8 text-center w-full">
+                        <h1 data-aos="fade-up" data-aos-delay="100" class="leading-[48px] md:leading-none">Join the waitlist</h1>
+                        <p  data-aos="fade-up" data-aos-delay="200" class="body-lg">We are commited to connecting buyers and sellers. We give your sale a boost by providing the right audience</p>
+                     </div>
+
+                    <div data-aos="fade-up" data-aos-delay="300" class="flex flex-col items-center justify-center max-w-xl xl:px-4 gap-8 w-full">
+                        <div class="flex flex-col p-6 md:p-8 w-full rounded-2xl shadow-[0px_4px_24px_0px_#0000001F]">
+                          <div class="flex flex-col gap-4 lg:gap-6">
+                            <h3>Sign up here</h3>
+                            <ul class="flex flex-col gap-2 text-sm md:text-base">
+                              <li class="flex items-center gap-1"><img src="assets/images/svg/check.svg" alt="check"/>Access to best company marketplace</li>
+                              <li class="flex items-center gap-1"><img src="assets/images/svg/check.svg" alt="check"/>Fair market valuation</li>
+                              <li class="flex items-center gap-1"><img src="assets/images/svg/check.svg" alt="check"/>Free access on product launch</li>
+                            </ul>
+                          </div>
+                          <div class="grid grid-cols-1  gap-5 mt-4">
+                            <div class="flex flex-col">
+                              <label class="font-bold mb-2">First name</label>
+                              <input type="text" x-model="firstName" @blur="validateField('firstName')" :class="{'input-error': errors.firstName}" class="input">
+                              <template x-if="errors.firstName">
+                                <div class="flex items-start mt-2 gap-1">
+                                  <img src="assets/images/svg/error.svg" alt="icon" />
+                                  <p class="text-[13px] leading-4" x-text="errors.firstName"></p>
+                                </div>
+                              </template>
+                            </div>
+                            
+                            <div class="flex flex-col">
+                              <label class="font-bold mb-2">Last name</label>
+                              <input type="text" x-model="lastName" @blur="validateField('lastName')" :class="{'input-error': errors.lastName}" class="input">
+                              <template x-if="errors.lastName">
+                                <div class="flex items-start mt-2 gap-1">
+                                  <img src="assets/images/svg/error.svg" alt="icon" />
+                                  <p class="text-[13px] leading-4" x-text="errors.lastName"></p>
+                                </div>
+                              </template>
+                            </div>
+
+                            <div class="flex flex-col">
+                              <label class="font-bold mb-2">Email Address</label>
+                              <input type="email" x-model="emailAddress" @blur="validateField('emailAddress')" :class="{'input-error': errors.emailAddress}" class="input">
+                              <template x-if="errors.emailAddress">
+                                <div class="flex items-start mt-2 gap-1">
+                                  <img src="assets/images/svg/error.svg" alt="icon" />
+                                  <p class="text-[13px] leading-4" x-text="errors.emailAddress"></p>
+                                </div>
+                              </template>
+                            </div>
+
+                            <div class="flex flex-col">
+                              <label class="font-bold mb-2">Phone Number</label>
+                              <input type="text" x-model="phoneNumber" @blur="validateField('phoneNumber')" :class="{'input-error': errors.phoneNumber}" class="input">
+                              <template x-if="errors.phoneNumber">
+                                <div class="flex items-start mt-2 gap-1">
+                                  <img src="assets/images/svg/error.svg" alt="icon" />
+                                  <p class="text-[13px] leading-4" x-text="errors.phoneNumber"></p>
+                                </div>
+                              </template>
+                            </div>
+          
+                          </div>
+                          <div class="mt-8">
+                            <button :disabled="!isSignUpFormValid()" type="button" class="btn-primary w-full md:w-auto">Join the waitlist</button>
+                          </div>
+                        </div>
+                     </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+
+  
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <!-- Main JS -->
+  <script type="text/javascript" src="assets/js/main.js"></script>
+ 
+ 
+</html>
+ 

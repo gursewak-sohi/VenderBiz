@@ -19,7 +19,6 @@
   font-display: swap;
 }
  
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -56,12 +55,22 @@
     @apply uppercase text-sm leading-6 font-bold tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-secondary-600/70
   }
   .btn-primary {
-    @apply flex items-center justify-center text-center gap-1.5 py-3 duration-200 px-6 bg-primary-600 text-lg leading-6 font-bold text-white rounded-md hover:bg-primary-700 active:bg-primary-500
+    @apply flex items-center justify-center text-center gap-1.5 py-3 duration-200 px-6 bg-primary-600 text-lg leading-6 font-bold text-white rounded-md hover:bg-primary-700 active:bg-primary-500 disabled:opacity-50 disabled:pointer-events-none
   }
   .btn-secondary {
     @apply flex items-center justify-center text-center gap-1.5 py-2.5 duration-200 px-6 bg-white text-lg leading-6 font-bold text-brand rounded after:bg-gradient-to-r relative after:absolute after:inset-[-2px] after:rounded-md after:-z-10 after:from-primary-600 after:to-secondary-600/70 hover:bg-primary-700 hover:text-white active:bg-primary-500 active:text-white hover:after:from-primary-700 hover:after:to-primary-700 active:after:bg-primary-500 active:after:from-primary-500 active:after:to-primary-500
   }
+  .btn-tertiary {
+    @apply flex items-center justify-center text-center gap-1.5 py-3 duration-200 px-6 bg-light text-lg leading-6 font-bold text-main-600 rounded-md hover:bg-primary-700 hover:text-white active:bg-primary-500 active:text-white disabled:opacity-50 disabled:pointer-events-none
+  }
   .hyperlink {
     @apply flex items-center justify-center text-center gap-1.5 py-3 duration-200 px-6 bg-transparent text-lg leading-6 font-bold text-main-600 rounded-md hover:text-main-700 hover:underline active:text-main-500 active:underline
   }
+  .input {
+    @apply bg-light flex items-center rounded pl-3 pr-2 py-2 text-main-400 focus:text-main-600 text-sm leading-6 duration-200  hover:bg-black/5 focus:ring-2 focus:ring-[#0458FE] outline-none focus:outline-none
+  }
+  .input-error {
+    @apply !ring-[#FE0404] ring-2  shadow-[0px_0px_4px_0px_#FE040440]
+  }
 }
+
