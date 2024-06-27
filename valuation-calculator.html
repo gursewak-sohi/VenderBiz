@@ -45,11 +45,11 @@
                     <!-- Options -->
                     <ul x-cloak class="absolute top-full mt-2 w-60 rounded-md py-1.5 bg-white right-0 shadow-[0px_4px_20px_0_#0000001F]" x-show="open" x-transition:enter="transform transition ease-in-out duration-300" x-transition:enter-start="opacity-0 -translate-y-6" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transform transition ease-in-out duration-200"
                         x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
+                        <li class="text-lg flex items-center gap-2 py-1 px-3 duration-150 hover:bg-light cursor-pointer" @click="setLanguage('Portugese'); open = false">
+                          <img :class="{ 'opacity-100': language == 'Portugese', 'opacity-0': language != 'Portugese' }" src="assets/images/svg/check.svg" alt="Portugese"> Portugese
+                        </li>
                         <li class="text-lg flex items-center gap-2 py-1 px-3 duration-150 hover:bg-light cursor-pointer" @click="setLanguage('English'); open = false">
                            <img :class="{ 'opacity-100': language == 'English', 'opacity-0': language != 'English' }" src="assets/images/svg/check.svg" alt="English"> English
-                        </li>
-                        <li class="text-lg flex items-center gap-2 py-1 px-3 duration-150 hover:bg-light cursor-pointer" @click="setLanguage('Portugese'); open = false">
-                            <img :class="{ 'opacity-100': language == 'Portugese', 'opacity-0': language != 'Portugese' }" src="assets/images/svg/check.svg" alt="Portugese"> Portugese
                         </li>
                     </ul>
                 </div>
@@ -91,8 +91,8 @@
                           </div>
                           <div class="mt-6 flex flex-col-reverse md:flex-row justify-center gap-5">
                             <button @click="showResults = false" type="button" class="btn-tertiary">Back to form</button>
-                            <a class="btn-primary" href="javascript:;">
-                              Join the waitlist <img src="assets/images/svg/next.svg" alt="arrow">
+                            <a class="btn-primary" href="signup.html">
+                              <span x-text="language === 'English' ? 'Join the waitlist' : 'Junte-se à lista de espera'">Join the waitlist</span> <img src="assets/images/svg/next.svg" alt="arrow">
                             </a>
                           </div>
                         </div>
@@ -204,8 +204,10 @@
                             <button x-text="calcBtnText" @click="calculateValuation" :disabled="!isCalcFormValid() || isShowingResults" type="button" class="btn-primary w-full md:w-auto">Calculate valuation</button>
                           </div>
                         </div>
+                        <p  class="text-main-400 text-center text-sm px-5">Disclaimer: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>  
+                      </div>
                      </div>
-                     </div>
+                     
                 </div>
             </div>
         </section>

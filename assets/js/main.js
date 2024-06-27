@@ -16,7 +16,7 @@
     document.addEventListener('alpine:init', () => {
         Alpine.data('aplineData', () => ({
           //   Language
-          language: localStorage.getItem('language') || 'English',
+          language: localStorage.getItem('language') || 'Portugese',
           setLanguage(newLanguage) {
             this.language = newLanguage;
             localStorage.setItem('language', newLanguage);  

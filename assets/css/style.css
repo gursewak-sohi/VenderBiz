@@ -1376,10 +1376,6 @@ p{
   max-width: 928px;
 }
 
-.max-w-2xl{
-  max-width: 42rem;
-}
-
 .max-w-xl{
   max-width: 36rem;
 }
@@ -3498,26 +3494,6 @@ p{
   .xl\:px-3{
     padding-left: 0.75rem;
     padding-right: 0.75rem;
-  }
-
-  .xl\:px-8{
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-
-  .xl\:px-10{
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
-  }
-
-  .xl\:px-7{
-    padding-left: 1.75rem;
-    padding-right: 1.75rem;
-  }
-
-  .xl\:px-6{
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
   }
 
   .xl\:px-4{
