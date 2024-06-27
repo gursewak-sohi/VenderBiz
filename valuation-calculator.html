@@ -64,8 +64,8 @@
             <div class="max-w-7xl mx-auto px-4 md:px-20">
                 <div class="flex flex-col items-center gap-10">
                      <div class="flex flex-col items-center justify-center max-w-3xl xl:px-3 gap-6 lg:gap-8 text-center w-full">
-                        <h1 data-aos="fade-up" data-aos-delay="100" class="leading-[48px] md:leading-none">Free business valuation</h1>
-                        <p  data-aos="fade-up" data-aos-delay="200" class="body-lg">We are commited to connecting buyers and sellers. We give your sale a boost by providing the right audience</p>
+                        <h1 data-aos="fade-up" data-aos-delay="100" class="leading-[48px] md:leading-none" x-text="language === 'English' ? 'Free business valuation' : 'Avaliação empresarial gratuita'">Free business valuation</h1>
+                        <p  data-aos="fade-up" data-aos-delay="200" class="body-lg" x-text="language === 'English' ? 'We are commited to connecting buyers and sellers. We give your sale a boost by providing the right audience' : 'Estamos empenhados em conectar compradores e vendedores. Damos um impulso à sua venda, fornecendo o público certo'">We are commited to connecting buyers and sellers. We give your sale a boost by providing the right audience</p>
                      </div>
                      <!-- Results -->
                      <div
@@ -78,19 +78,19 @@
                       <div data-aos="fade-up" data-aos-delay="300" class="flex flex-col items-center justify-center max-w-3xl xl:px-3 gap-8 w-full">
                         <div class="flex flex-col p-6 md:p-8 w-full rounded-2xl shadow-[0px_4px_24px_0px_#0000001F]">
                           <div class="flex flex-col gap-4 lg:gap-6">
-                            <h3>Business valuation - results</h3>
-                            <p>Based on our research and data, we estimate your business as such.</p>
+                            <h3 x-text="language === 'English' ? 'Business valuation - results' : 'Avaliação de negócios - resultados'">Business valuation - results</h3>
+                            <p x-text="language === 'English' ? 'Based on our research and data, we estimate your business as such.' : 'Com base em nossas pesquisas e dados, estimamos seu negócio como tal.'">Based on our research and data, we estimate your business as such.</p>
                           </div>
                           <div class="bg-light p-6 rounded-lg flex flex-col items-center text-center mt-4 gap-2">
                             <h3>€<span x-text="result"></span>.00</h3>
-                            <p class="body-lg text-main-400">Valuation in euro</p>
+                            <p class="body-lg text-main-400" x-text="language === 'English' ? 'Valuation in euro' : 'Avaliação em euros'">Valuation in euro</p>
                           </div>
                           <div class="flex flex-col gap-4 mt-10">
-                            <h4>Place where companies are sold</h4>
-                            <p>VenderBiz is the place where buyers and sellers of companies meet. Want to be the first to get free access to our platform? Join our waitlist now.</p>
+                            <h4 x-text="language === 'English' ? 'Place where companies are sold' : 'Local onde as empresas são vendidas'">Place where companies are sold</h4>
+                            <p x-text="language === 'English' ? 'VenderBiz is the place where buyers and sellers of companies meet. Want to be the first to get free access to our platform? Join our waitlist now.' : 'VenderBiz é o local onde compradores e vendedores de empresas se encontram. Quer ser o primeiro a ter acesso gratuito à nossa plataforma? Junte-se à nossa lista de espera agora.'">VenderBiz is the place where buyers and sellers of companies meet. Want to be the first to get free access to our platform? Join our waitlist now.</p>
                           </div>
                           <div class="mt-6 flex flex-col-reverse md:flex-row justify-center gap-5">
-                            <button @click="showResults = false" type="button" class="btn-tertiary">Back to form</button>
+                            <button @click="showResults = false" type="button" class="btn-tertiary" x-text="language === 'English' ? 'Back to form' : 'Voltar ao formulário'">Back to form</button>
                             <a class="btn-primary" href="signup.html">
                               <span x-text="language === 'English' ? 'Join the waitlist' : 'Junte-se à lista de espera'">Join the waitlist</span> <img src="assets/images/svg/next.svg" alt="arrow">
                             </a>
@@ -109,13 +109,13 @@
                       <div data-aos="fade-up" data-aos-delay="300" class="flex flex-col items-center justify-center max-w-3xl xl:px-3 gap-8 w-full">
                         <div class="flex flex-col p-6 md:p-8 w-full rounded-2xl shadow-[0px_4px_24px_0px_#0000001F]">
                           <div class="flex flex-col gap-4 lg:gap-6">
-                            <h3>Use valuation tool</h3>
-                            <p>Use the input fields below to calculate a fair market valuation for your business</p>
+                            <h3 x-text="language === 'English' ? 'Use valuation tool' : 'Use ferramenta de avaliação'">Use valuation tool</h3>
+                            <p x-text="language === 'English' ? 'Use the input fields below to calculate a fair market valuation for your business' : 'Use os campos de entrada abaixo para calcular uma avaliação de mercado justa para sua empresa'">Use the input fields below to calculate a fair market valuation for your business</p>
                           </div>
                           <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mt-4">
                             <div class="flex flex-col">
-                              <label class="font-bold mb-1">Annual Earnings</label>
-                              <p class="text-main-400 mb-2">Your annual earnings in euro’s before interest, taxes, depecrecation and amortization</p>
+                              <label class="font-bold mb-1" x-text="language === 'English' ? 'Annual Earnings' : 'Lucro Anual'">Annual Earnings</label>
+                              <p class="text-main-400 mb-2" x-text="language === 'English' ? 'Your annual earnings in euro’s before interest, taxes, depecrecation and amortization' : 'Seus ganhos anuais em euros antes de juros, impostos, depreciação e amortização'">Your annual earnings in euro’s before interest, taxes, depecrecation and amortization</p>
                               <input type="text" x-model="annualEarnings" @blur="validateField('annualEarnings')" :class="{'input-error': errors.annualEarnings}" class="input">
                               <template x-if="errors.annualEarnings">
                                 <div class="flex items-start mt-2 gap-1">
@@ -125,8 +125,8 @@
                               </template>
                             </div>
                             <div class="flex flex-col">
-                              <label class="font-bold mb-1">Anticipated growth rate of earnings</label>
-                              <p class="text-main-400 mb-2">If you expect earnings to continue go grow, please input a rate between 0 and 100%</p>
+                              <label class="font-bold mb-1" x-text="language === 'English' ? 'Anticipated growth rate of earnings' : 'Taxa de crescimento prevista dos lucros'">Anticipated growth rate of earnings</label>
+                              <p class="text-main-400 mb-2" x-text="language === 'English' ? 'If you expect earnings to continue go grow, please input a rate between 0 and 100%' : 'Se você espera que os ganhos continuem a crescer, insira uma taxa entre 0 e 100%'">If you expect earnings to continue go grow, please input a rate between 0 and 100%</p>
                               <input type="text" x-model="growthRate" @blur="validateField('growthRate')" :class="{'input-error': errors.growthRate}" class="input">
                               <template x-if="errors.growthRate">
                                 <div class="flex items-start mt-2 gap-1">
@@ -137,8 +137,8 @@
                             </div>
 
                             <div class="flex flex-col">
-                              <label class="font-bold mb-1">Level of business risk</label>
-                              <p class="text-main-400 mb-2">The level of industry, financial risk your business is operating in. </p>
+                              <label class="font-bold mb-1" x-text="language === 'English' ? 'Level of business risk' : 'Nível de risco do negócio'">Level of business risk</label>
+                              <p class="text-main-400 mb-2" x-text="language === 'English' ? 'The level of industry, financial risk your business is operating in.' : 'O nível de risco financeiro e industrial em que sua empresa está operando.'">The level of industry, financial risk your business is operating in. </p>
                               <!-- Custom Select -->
                               <div x-data="{'open': false }" @click.outside="open = false" class="relative">
                                 <button type="button" @click="open = !open;" class="input w-full">
@@ -165,8 +165,8 @@
                             </div>
 
                             <div class="flex flex-col">
-                              <label class="font-bold mb-1">Excess compensation</label>
-                              <p class="text-main-400 mb-2">Any outstanding compensation to employees or shareholders that is due</p>
+                              <label class="font-bold mb-1" x-text="language === 'English' ? 'Excess compensation' : 'Excesso de compensação'">Excess compensation</label>
+                              <p class="text-main-400 mb-2" x-text="language === 'English' ? 'Any outstanding compensation to employees or shareholders that is due' : 'Qualquer remuneração pendente a funcionários ou acionistas que seja devida'">Any outstanding compensation to employees or shareholders that is due</p>
                               <input type="text" x-model="excessCompensation" @blur="validateField('excessCompensation')" :class="{'input-error': errors.excessCompensation}" class="input">
                               <template x-if="errors.excessCompensation">
                                 <div class="flex items-start mt-2 gap-1">
@@ -177,8 +177,8 @@
                             </div>
 
                             <div class="flex flex-col">
-                              <label class="font-bold mb-1">Number of years earnings continue</label>
-                              <p class="text-main-400 mb-2">Input the amount of years earnings are expected to continue, between 0 and 10</p>
+                              <label class="font-bold mb-1" x-text="language === 'English' ? 'Number of years earnings continue' : 'Número de anos em que os ganhos continuam'">Number of years earnings continue</label>
+                              <p class="text-main-400 mb-2" x-text="language === 'English' ? 'Input the amount of years earnings are expected to continue, between 0 and 10' : 'Insira a quantidade de anos em que se espera que os ganhos continuem, entre 0 e 10'">Input the amount of years earnings are expected to continue, between 0 and 10</p>
                               <input type="text" x-model="yearsEarningsContinue" @blur="validateField('yearsEarningsContinue')" :class="{'input-error': errors.yearsEarningsContinue}" class="input">
                               <template x-if="errors.yearsEarningsContinue">
                                 <div class="flex items-start mt-2 gap-1">
@@ -189,8 +189,8 @@
                             </div>
 
                             <div class="flex flex-col">
-                              <label class="font-bold mb-1">Discount for lack of marketability</label>
-                              <p class="text-main-400 mb-2">Input a percentage between -100% and 100% for how marketable your business is</p>
+                              <label class="font-bold mb-1" x-text="language === 'English' ? 'Discount for lack of marketability' : 'Desconto por falta de comercialização'">Discount for lack of marketability</label>
+                              <p class="text-main-400 mb-2" x-text="language === 'English' ? 'Input a percentage between -100% and 100% for how marketable your business is' : 'Insira uma porcentagem entre -100% e 100% de quão comercializável é o seu negócio'">Input a percentage between -100% and 100% for how marketable your business is</p>
                               <input type="text" x-model="marketabilityDiscount" @blur="validateField('marketabilityDiscount')" :class="{'input-error': errors.marketabilityDiscount}" class="input">
                               <template x-if="errors.marketabilityDiscount">
                                 <div class="flex items-start mt-2 gap-1">
@@ -204,7 +204,7 @@
                             <button x-text="calcBtnText" @click="calculateValuation" :disabled="!isCalcFormValid() || isShowingResults" type="button" class="btn-primary w-full md:w-auto">Calculate valuation</button>
                           </div>
                         </div>
-                        <p  class="text-main-400 text-center text-sm px-5">Disclaimer: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>  
+                        <p x-text="language === 'English' ? 'Disclaimer: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s' : 'Isenção de responsabilidade: Lorem Ipsum é simplesmente um texto fictício da indústria de impressão e composição tipográfica. Lorem Ipsum tem sido o texto fictício padrão da indústria desde 1500'" class="text-main-400 text-center text-sm px-5">Disclaimer: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>  
                       </div>
                      </div>
                      

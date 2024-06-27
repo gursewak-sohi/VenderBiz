@@ -20,6 +20,7 @@
         gtag('js', new Date());
         gtag('config', 'G-EXSLFKX78X');
    </script>
+
    <!-- MailerLite Universal -->
   <script>
     (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
@@ -27,7 +28,7 @@
     n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
     (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
     ml('account', '1001332');
-    </script>
+  </script>
     <!-- End MailerLite Universal -->
 </head>
 
@@ -73,21 +74,27 @@
             <div class="max-w-7xl mx-auto px-4 md:px-20">
                 <div class="flex flex-col items-center gap-10">
                      <div class="flex flex-col items-center justify-center max-w-3xl xl:px-3 gap-6 lg:gap-8 text-center w-full">
-                        <h1 data-aos="fade-up" data-aos-delay="100" class="leading-[48px] md:leading-none">Join the waitlist</h1>
-                        <p  data-aos="fade-up" data-aos-delay="200" class="body-lg">We are commited to connecting buyers and sellers. We give your sale a boost by providing the right audience</p>
+                        <h1 x-text="language === 'English' ? 'Join the waitlist' : 'Junte-se à lista de espera'" data-aos="fade-up" data-aos-delay="100" class="leading-[48px] md:leading-none">Join the waitlist</h1>
+                        <p x-text="language === 'English' ? 'We are commited to connecting buyers and sellers. We give your sale a boost by providing the right audience' : 'Estamos empenhados em conectar compradores e vendedores. Damos um impulso à sua venda, fornecendo o público certo'" data-aos="fade-up" data-aos-delay="200" class="body-lg">We are commited to connecting buyers and sellers. We give your sale a boost by providing the right audience</p>
                      </div>
 
                     <div data-aos="fade-up" data-aos-delay="300" class="flex flex-col items-center justify-center max-w-xl xl:px-4 gap-8 w-full">
                         <div class="flex flex-col p-6 md:p-8 w-full rounded-2xl shadow-[0px_4px_24px_0px_#0000001F]">
                           <div class="flex flex-col gap-4 lg:gap-6">
-                            <h3>Sign up here</h3>
+                            <h3 x-text="language === 'English' ? 'Sign up here' : 'Assine aqui'">Sign up here</h3>
                             <ul class="flex flex-col gap-2 text-sm md:text-base">
-                              <li class="flex items-center gap-1"><img src="assets/images/svg/check.svg" alt="check"/>Access to best company marketplace</li>
-                              <li class="flex items-center gap-1"><img src="assets/images/svg/check.svg" alt="check"/>Fair market valuation</li>
-                              <li class="flex items-center gap-1"><img src="assets/images/svg/check.svg" alt="check"/>Free access on product launch</li>
+                              <li class="flex items-center gap-1"><img src="assets/images/svg/check.svg" alt="check"/><span x-text="language === 'English' ? 'Access to best company marketplace' : 'Acesso ao melhor mercado da empresa'">Access to best company marketplace</span></li>
+                              <li class="flex items-center gap-1"><img src="assets/images/svg/check.svg" alt="check"/><span x-text="language === 'English' ? 'Fair market valuation' : 'Avaliação justa de mercado'">Fair market valuation</span></li>
+                              <li class="flex items-center gap-1"><img src="assets/images/svg/check.svg" alt="check"/><span x-text="language === 'English' ? 'Free access on product launch' : 'Acesso gratuito no lançamento do produto'">Free access on product launch</span></li>
                             </ul>
                           </div>
-                          <div class="ml-embedded mt-4" data-form="nQCmbV"></div>
+                          <div x-show="language === 'Portugese'">
+                            <div class="ml-embedded mt-4" data-form="nQCmbV"></div>
+                          </div>
+                          <div x-show="language === 'English'">
+                            <div class="ml-embedded mt-4" data-form="xIuaTE"></div>
+                          </div>
+                          
                           <!-- <div class="grid grid-cols-1 gap-5 mt-4">
                             <div class="flex flex-col">
                               <label class="font-bold mb-2">First name</label>

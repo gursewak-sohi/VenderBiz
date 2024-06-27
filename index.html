@@ -67,7 +67,7 @@
                         <div data-aos="fade-up"  class="bg-gradient-to-r from-primary-600 to-secondary-600 p-[0.5px] rounded-full mb-3">
                             <div class="bg-white flex items-center gap-1 pl-2 pr-3 py-1 text-[13px] leading-4 font-semibold shadow-[0px_1px_4px_0px_#0000001F] rounded-full">
                                 <img src="assets/images/svg/twinkles.svg" alt="twinkles">
-                                Sign up today for free access
+                                <span x-text="language === 'English' ? 'Sign up today for free access ' : 'Inscreva-se hoje para acesso gratuito'">Sign up today for free access </span>
                             </div>
                         </div>
                         <h1 data-aos="fade-up" data-aos-delay="100"  class="lg:min-h-[152px]" x-text="language === 'English' ? 'Sell your business in days' : 'Venda o Seu Negócio em Dias'">Sell your business in days</h1>
@@ -186,7 +186,7 @@
             <div data-aos="fade-up" data-aos-delay="0" class="bg-brand rounded-2xl flex justify-center px-5 sm:px-10 py-16 md:p-16 relative">
                 <div class="w-full max-w-[688px] mx-auto flex flex-col items-center text-center">
                     <img class="absolute left-1/2 -translate-x-1/2 -top-12" src="assets/images/svg/logomark.svg" alt="logomark"/>
-                    <div class="caption mb-1">THIS IS NOT THE END</div>
+                    <div x-text="language === 'English' ? 'THIS IS NOT THE END' : 'ESTE NÃO É O FIM'" class="caption mb-1">THIS IS NOT THE END</div>
                     <h2 class="from-white to-white/70 h-[40px] lg:h-[62px] mb-3.5" x-text="language === 'English' ? 'Sell your Business Today' : 'Venda o Seu Negócio Hoje'">Sell your Business Today</h2>
                     <p class="body-lg text-light mb-8" x-text="language === 'English' ? 'Join a community of successful sellers - sign up now andget exclusive early access to VenderBiz' : 'Junte-se a uma comunidade de vendedores desucesso - inscreva-se agora e obtenha acesso exclusivo antecipado ao VenderBiz.'">Join a community of successful sellers - sign up now andget exclusive early access to VenderBiz</p>
                     <a class="btn-primary" href="signup.html">
